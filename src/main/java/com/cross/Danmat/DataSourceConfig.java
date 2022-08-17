@@ -51,10 +51,10 @@ public class DataSourceConfig {
 		return new UserServiceImpl(userDao());
 	}
 	
-//	@Bean
-//	public CrosswordDao crosswordDao() {
-//		return new CrosswordDao(dataSource());
-//	}
+	@Bean
+	public CrosswordDao crosswordDao() {
+		return new CrosswordDao(dataSource());
+	}
 	
 	
 }
