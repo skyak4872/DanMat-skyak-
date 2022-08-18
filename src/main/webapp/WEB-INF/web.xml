@@ -25,12 +25,12 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>com.varxyz.jvx330.mvc.WebMVCConfig</param-value>
+			<param-value>com.cross.Danmat.WebMVCConfig</param-value>
 			<!--<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>-->
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation_exam</param-name>
-			<param-value>com.varxyz.jvx350.mvc.WebMVCConfig</param-value>
+			<param-value>com.cross.Danmat.WebMVCConfig</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

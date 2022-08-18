@@ -10,8 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.cross.teamProject")
-
+@ComponentScan(basePackages = "com.cross.Danmat")
 public class WebMVCConfig implements WebMvcConfigurer {
 
 	

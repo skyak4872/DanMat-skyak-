@@ -1,7 +1,11 @@
 package com.cross.Danmat.crossword.service;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Random;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,7 +20,7 @@ public class Test {
 		CrosswordDao cw_Dao = context.getBean("crosswordDao",CrosswordDao.class);
 		List<String> word_list = new ArrayList<>();
 		Random rd = new Random();
-		int size = 10;
+		int size = 5;
 		int count = 0;
 		
 		List<Crossword> cw_list = cw_Dao.findAll();
@@ -54,7 +58,7 @@ public class Test {
 		System.out.println(word_list.get(count-1));
 		System.out.println(word);
 		int x_num = 0;
-		int y_num = word_leng+word_list.get(count-1).length();
+		int y_num = word.length-word_leng;
 		System.out.println(word_leng);
 		for(int i = 0; i < word_list.get(count-1).length(); i++) {
 			for(int j = 0; j < word.length; j++) {

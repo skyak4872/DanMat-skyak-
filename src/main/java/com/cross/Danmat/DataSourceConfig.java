@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.cross.Danmat.Manager.Dao.ManagerDao;
+import com.cross.Danmat.Manager.Service.ManagerServiceImpl;
 import com.cross.Danmat.User.Dao.UserDao;
 import com.cross.Danmat.User.Service.UserServiceImpl;
 import com.cross.Danmat.crossword.dao.CrosswordDao;
@@ -54,6 +56,16 @@ public class DataSourceConfig {
 	@Bean
 	public CrosswordDao crosswordDao() {
 		return new CrosswordDao(dataSource());
+	}
+	
+	@Bean
+	public ManagerDao managerDao() {
+		return new ManagerDao(dataSource());
+	}
+	
+	@Bean
+	public ManagerServiceImpl managerService() {
+		return new ManagerServiceImpl(managerDao());
 	}
 	
 	
