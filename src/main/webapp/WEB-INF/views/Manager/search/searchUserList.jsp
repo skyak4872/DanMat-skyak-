@@ -11,19 +11,21 @@
 <script src="https://kit.fontawesome.com/53a8c415f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<form:form  action="searchUserList" method="Post">
+<form:form  action="searchUser" method="Post">
 		<select name="type">
 			<option>--선택--</option>
-			<option value="Id">아이디</option>
-			<option value="Email">이메일</option>
+			<option name="type" value="Id">아이디</option>
+			<option name="type" value="Email">이메일</option>
 		</select>
-			<input type="text" path="Name"/><br>
+			<input type="text" name="Name"/>
 			<input type="submit" value="검색">
 	</form:form>
   <div class="wrap">
        <div class="img"><img src="<c:url value='/resources/images/logo_transparent.png'/>" alt=""></div>
-      		<c:forEach var="searchList" items="${searchList }">
-           <h3 class="searchInfo"> 유저 목록 <br> '${searchList.searchuserList }' 입니다.</h3>
+      		<c:forEach var="searchList" items="${user_list }">
+           <h3 class="searchInfo"> 유저 목록</h3>
+           <br><p>아이디: ${searchList.userid }</p>
+           <br><p>이메일: ${searchList.email }</p>
             </c:forEach>
            </div>
 

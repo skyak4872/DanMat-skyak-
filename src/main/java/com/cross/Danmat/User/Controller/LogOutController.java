@@ -20,7 +20,7 @@ public class LogOutController {
 	public String logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession(false);
 		session.invalidate();
-		return "logIn/logIn";
+		return "User/logIn/logIn";
 		
 	}
 }

@@ -27,7 +27,7 @@ public class LoginController {
 	//============================================ 로그인 form ================================================
 	@GetMapping
 	public String loginPage() {
-		return "logIn/logIn";
+		return "User/logIn/logIn";
 	}
 	
 	//============================================ 로그인 ================================================
@@ -38,11 +38,11 @@ public class LoginController {
 		model.addAttribute("result", result);
 		
 		if(result == 2 ) {
-			return "logIn/error_logIn";
+			return "User/logIn/error_logIn";
 		}if(user.getUserid() == null || user.getUserid().length() == 0 ) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}if(user.getPasswd() == null || user.getPasswd().length() == 0 ) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}
 
 		HttpSession session = request.getSession(true); 

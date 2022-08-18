@@ -25,7 +25,7 @@ public class SignUpController {
 	@GetMapping
 	public String SignUpForm(Model model) {
 		model.addAttribute("user", new UserCommand());
-		return "signUp/signUp";
+		return "User/signUp/signUp";
 	}
 	
 	//============================================ 회원가입 ================================================
@@ -41,19 +41,19 @@ public class SignUpController {
 		
 		//form 입력값이 잘못되었을때 다시 회원가입페이지로
 		if(idResult == 1) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}if(emailResult == 1) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}if(user.getUserid() == null || user.getUserid().length() == 0 ) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}if(user.getPasswd() == null || user.getPasswd().length() == 0 ) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}if(user.getEmail() == null || user.getEmail().length() == 0 ) {
-			return "signUp/error_signUp";
+			return "User/signUp/error_signUp";
 		}
 		
 		userService.addUser(user);
 		context.close();
-		return "signUp/success_signUp";
+		return "User/signUp/success_signUp";
 	}
 }

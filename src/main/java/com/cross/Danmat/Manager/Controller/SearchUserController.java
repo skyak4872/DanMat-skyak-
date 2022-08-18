@@ -1,5 +1,6 @@
 package com.cross.Danmat.Manager.Controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -29,11 +30,21 @@ public class SearchUserController {
 	}
 	
 	@PostMapping
-	public String searchId(@ModelAttribute("user") UserCommand user, Model model) {
-		UserCommand searchId = managerservice.searchId(user.getUserid());
-		model.addAttribute("searchId",searchId);
+	public String searchId(@RequestParam("type")String type,
+			@RequestParam("Name") String name, Model model) {
+		System.out.println(type);
+		if(type.equals("Id")) {
+			UserCommand searchId = managerservice.searchId(name);
+			model.addAttribute("searchId",searchId);
+			return "Manager/search/searchInfoById";
+		}else if(type.equals("Email")){
+			UserCommand searchemail = managerservice.searchEmail(name);
+			model.addAttribute("searchemail", searchemail);
+			return "Manager/search/searchInfoByEmail";
+		}else {
 			return "Manager/search/searchUserList";
 		}
+	}
 	
 //	@GetMapping   // 유저 이메일 검색
 //	public String SearchEmailForm(Model model) {

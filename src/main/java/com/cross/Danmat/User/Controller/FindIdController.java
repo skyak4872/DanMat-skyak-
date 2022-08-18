@@ -23,7 +23,7 @@ public class FindIdController {
 	//============================================ 아이디 찾기 form ================================================
 	@GetMapping
 	public String FindIdForm(Model model) {
-		return "findId/findId";
+		return "User/findId/findId";
 	}
 	
 	//============================================ 아이디 찾기 ================================================
@@ -34,9 +34,9 @@ public class FindIdController {
 		findId.forEach(c -> user.setUserid(c.getUserid()));
 		System.out.println(user.getEmail());
 		if(user.getUserid() == null) {
-			return "findId/error_findId";
+			return "User/findId/error_findId";
 		}
 		
-		return "findId/success_findId";
+		return "User/findId/success_findId";
 	}
 }

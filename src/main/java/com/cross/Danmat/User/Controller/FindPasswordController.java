@@ -22,7 +22,7 @@ public class FindPasswordController {
 	//============================================ 비밀번호 찾기 form ================================================
 		@GetMapping
 		public String FindIdForm(Model model) {
-			return "findPassword/findPassword";
+			return "User/findPassword/findPassword";
 		}
 		
 	//============================================ 비밀번호 찾기 ================================================
@@ -33,10 +33,10 @@ public class FindPasswordController {
 			findPassword.forEach(c -> user.setPasswd(c.getPasswd()));
 			System.out.println(findPassword);
 			if(user.getPasswd() == null) {
-				return "findPassword/error_findPassword";
+				return "User/findPassword/error_findPassword";
 			}
 			
-			return "findPassword/success_findPassword";
+			return "User/findPassword/success_findPassword";
 		}		
 		
 }

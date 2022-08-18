@@ -11,16 +11,10 @@
 <script src="https://kit.fontawesome.com/53a8c415f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<form action="searchInfo" method="POST">
   		<div class="wrap">
     	   <div class="img"><img src="<c:url value='/resources/images/logo_transparent.png'/>" alt=""></div>
-      		<c:forEach var="searchId" items="${searchId }">
-          	 <h3 class="searchInfo">회원님의 아이디 정보는 <br> '${searchId.userid }' 입니다.</h3>
-            </c:forEach>
-            <c:forEach var="searchEmail" items="${searchEmail }">
-          	 <h3 class="searchInfo">회원님의 이메일 정보는 <br> '${searchEmail.email }' 입니다.</h3>
-            </c:forEach>
-           <div class="submit">
+    	   <h3 class="searchInfo">회원님의 아이디 정보는 <br> '${searchEmail.userId }' 입니다.</h3>
+    	   <h3 class="searchInfo">회원님의 이메일 정보는 <br> '${searchEmail.email }' 입니다.</h3>
              <p class="mgMain"><a href="mgMain" style="color: #fff;">메인페이지</a></p>
            </div>
       </div>

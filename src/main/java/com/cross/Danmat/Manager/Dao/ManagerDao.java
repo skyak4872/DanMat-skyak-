@@ -22,13 +22,13 @@ public class ManagerDao {
 	
 	//아이디로 회원 찾기
 	public UserCommand SearchIdForm(String userid){
-		String sql ="SELECT userid FROM User WHERE userid = ? ";
+		String sql ="SELECT * FROM User WHERE userid = ? ";
 		return jdbcTemplate.queryForObject(sql, new UserRowMapper(),userid);
 	}
 	
 	//이메일로 회원 찾기
 	public UserCommand SearchEmailForm(String email){
-		String sql ="SELECT email FROM User WHERE email = ? ";
+		String sql ="SELECT * FROM User WHERE email = ? ";
 		return jdbcTemplate.queryForObject(sql, new UserRowMapper(),email);
 	}
 	
