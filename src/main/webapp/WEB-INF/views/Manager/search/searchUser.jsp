@@ -20,7 +20,7 @@
         </div>
            <div class="submit">
              <input type="submit" value="확인" style="cursor: pointer;">
-             <p class="mgMain"><a href="mgMain">메인페이지</a></p>
+             <p class="mgMain"><a href="/Manager/mgMain">메인페이지</a></p>
            </div>
 	</form>
 </body>

@@ -47,6 +47,7 @@ public class LoginController {
 
 		HttpSession session = request.getSession(true); 
 		session.setAttribute("userid", user.getUserid());
+		System.out.println(user.getUserid());
 		context.close();
 		return "index";
 	}

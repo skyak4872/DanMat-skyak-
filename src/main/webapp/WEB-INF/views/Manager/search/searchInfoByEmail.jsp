@@ -15,7 +15,7 @@
     	   <div class="img"><img src="<c:url value='/resources/images/logo_transparent.png'/>" alt=""></div>
     	   <h3 class="searchInfo">회원님의 아이디 정보는 <br> '${searchEmail.userId }' 입니다.</h3>
     	   <h3 class="searchInfo">회원님의 이메일 정보는 <br> '${searchEmail.email }' 입니다.</h3>
-             <p class="mgMain"><a href="mgMain" style="color: #fff;">메인페이지</a></p>
+             <p class="mgMain"><a href="/Manager/mgMain" style="color: #fff;">메인페이지</a></p>
            </div>
       </div>
 	</form>

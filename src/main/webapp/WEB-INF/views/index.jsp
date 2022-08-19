@@ -59,6 +59,10 @@
         if(userid == null){ %>
         <a class="p-2" href="signUp">회원가입</a>
         <a class="btn loginBtn" href="logIn">로그인</a>
+        <% } else if(userid.equals("admin")) { %>
+        <span class="p-2" style="font-size: 20px; color: white;">관리자님</span>
+        <a class="p-2" href="Manager/mgMain">관리자 페이지</a>
+        <a class="btn-LoginBtn" href="logOut">로그아웃</a>
         <% } else { %>
         	<span class="p-2" style="font-size: 20px; color: white;"><%= userid %>님</span>
             <a class="btn loginBtn" href="logOut">로그아웃</a>

@@ -17,7 +17,7 @@ import com.cross.Danmat.Manager.Service.ManagerServiceImpl;
 import com.cross.Danmat.User.Command.UserCommand;
 
 @Controller("Manager.Controller.searchUserController")
-@RequestMapping("manager/searchUser")  //관리자 전용 회원 검색
+@RequestMapping("Manager/searchUser")  //관리자 전용 회원 검색
 public class SearchUserController {
 	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
 	ManagerServiceImpl managerservice = context.getBean("managerService", ManagerServiceImpl.class);

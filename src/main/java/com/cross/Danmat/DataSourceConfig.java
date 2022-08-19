@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.cross.Danmat.Board.Dao.BoardDao;
+import com.cross.Danmat.Board.Service.BoardServiceImpl;
 import com.cross.Danmat.Manager.Dao.ManagerDao;
 import com.cross.Danmat.Manager.Service.ManagerServiceImpl;
 import com.cross.Danmat.User.Dao.UserDao;
@@ -66,6 +68,16 @@ public class DataSourceConfig {
 	@Bean
 	public ManagerServiceImpl managerService() {
 		return new ManagerServiceImpl(managerDao());
+	}
+	
+	@Bean
+	public BoardDao boardDao() {
+		return new BoardDao(dataSource());
+	}
+	
+	@Bean
+	public BoardServiceImpl boardService() {
+		return new BoardServiceImpl(boardDao());
 	}
 	
 	

@@ -6,17 +6,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller("Manager.Controller.mgMainController")
-@RequestMapping("manager/mgMain")
+@RequestMapping("Manager/mgMain")
 public class MgMainController {  //관리자 메인 창
 	
 	@GetMapping
 	public String MgMainPage() {
-		return "Manager/mglogIn/mglogIn";
-	}
-	
-	
-	@PostMapping
-	public String ManagerMainPage() {
-		return "";
+		return "Manager/mgMain";
 	}
 }
