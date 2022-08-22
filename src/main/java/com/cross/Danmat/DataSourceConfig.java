@@ -7,12 +7,15 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.cross.Danmat.Board.Dao.BoardDao;
+import com.cross.Danmat.Board.Service.BoardServiceImpl;
 import com.cross.Danmat.Manager.Dao.ManagerDao;
 import com.cross.Danmat.Manager.Service.ManagerServiceImpl;
+import com.cross.Danmat.TwentyHills.Dao.TwentyHillsDao;
+import com.cross.Danmat.TwentyHills.Service.TwentyHillsServiceImpl;
 import com.cross.Danmat.User.Dao.UserDao;
 import com.cross.Danmat.User.Service.UserServiceImpl;
 import com.cross.Danmat.crossword.dao.CrosswordDao;
-import com.cross.Danmat.wordle.Service.TwentyHillsServiceImpl;
 
 
 
@@ -69,13 +72,23 @@ public class DataSourceConfig {
 		return new ManagerServiceImpl(managerDao());
 	}
 	
-//	@Bean
-//	public TwentyHillsDao twentyHillsDao() {
-//		return new TwentyHillsDao(dataSource());
-//	}
+	@Bean
+	public BoardDao boardDao() {
+		return new BoardDao(dataSource());
+	}
 	
-//	@Bean
-//	public TwentyHillsServiceImpl twentyHillsService() {
-//		return new TwentyHillsServiceImpl();
-//	}
+	@Bean
+	public BoardServiceImpl boardService() {
+		return new BoardServiceImpl(boardDao());
+	}
+	
+	@Bean
+	public TwentyHillsDao twentyHillsDao() {
+		return new TwentyHillsDao(dataSource());
+	}
+	
+	@Bean
+	public TwentyHillsServiceImpl twentyHillsService() {
+		return new TwentyHillsServiceImpl(twentyHillsDao());
+	}
 }

@@ -33,23 +33,13 @@
 			for(let i = 0; i<5; i++){
 				if(input[i].value == result[i]){
 					input[i].style.background = 'green';
+					input[i].setAttribute("readonly", "true");
 				}else if(result.includes(input[i].value)){
 					input[i].style.background = 'yellow';
 				}else {
 					input[i].style.background = 'lightgrey';
 				}
-				
-				input[i].classList.remove('input');
 			}
-			
-			var template = `<div>
-			<input type="text" class="input" maxlength="1">
-			<input type="text" class="input" maxlength="1">
-			<input type="text" class="input" maxlength="1">
-			<input type="text" class="input" maxlength="1">
-			<input type="text" class="input" maxlength="1">
-			</div>`;
-			document.querySelector('body').insertAdjacentHTML('beforeend', template);
 		})
 	</script>
 </body>

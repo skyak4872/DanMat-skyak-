@@ -1,38 +1,29 @@
 package com.cross.Danmat.crossword.data;
 import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.cross.Danmat.DataSourceConfig;
+import com.cross.Danmat.crossword.dao.CrosswordDao;
+import com.cross.Danmat.crossword.domain.Crossword;
+
 import edu.princeton.cs.algs4.StdRandom;
 
 public class WordInsertor {
+	public static AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DataSourceConfig.class);
+	public static CrosswordDao crosswordDao = context.getBean("crosswordDao", CrosswordDao.class);
 
 	private char[][] grid;
 	private int gridLength;
 	private int[][] blockSet;
+	public static  List<Crossword> crossword_len6 = crosswordDao.findAllBylen(6);
+	public  List<Crossword> crossword_len5 = crosswordDao.findAllBylen(5);
+	public  List<Crossword> crossword_len4 = crosswordDao.findAllBylen(4);
+	public  List<Crossword> crossword_len3 = crosswordDao.findAllBylen(3);
+	public  List<Crossword> crossword_len2 = crosswordDao.findAllBylen(2);
 
-	private static String wordSet9[] = { "agreement", "amusement", "apparatus", "attention", "authority", "behaviour",
-			"committee", "condition", "digestion", "direction", "discovery", "education", "existence", "expansion",
-			"insurance", "invention", "knowledge", "operation", "secretary", "selection", "statement", "structure",
-			"substance", "transport" };
-	private static String wordSet8[] = { "addition", "approval", "argument", "building", "business", "daughter",
-			"decision", "distance", "division", "exchange", "increase", "industry", "interest", "language", "learning",
-			"mountain", "ornament", "pleasure", "position", "property", "question", "reaction", "relation", "religion",
-			"surprise", "teaching", "tendency" };
-	private static String wordSet7[] = { "account", "against", "attempt", "balance", "because", "between", "brother",
-			"chamber", "chinese", "college", "comfort", "company", "conquer", "control", "country", "current",
-			"disease", "disgust", "driving", "english", "epigram", "epistle", "example", "feeling", "fiction",
-			"forward", "harbour", "harmony", "hearing", "history", "impulse", "journey", "leather", "machine",
-			"manager", "measure", "meeting", "monitor", "morning", "opinion", "payment", "process", "produce",
-			"protest", "purpose", "quality", "reading", "request", "respect", "science", "servant", "society",
-			"spanish", "speaker", "stretch", "support", "thought", "through", "thunder", "trouble", "weather",
-			"writing" };
-	private static String wordSet6[] = { "across", "almost", "amount", "animal", "answer", "arabic", "attack", "before",
-			"belief", "breath", "butter", "button", "canvas", "chance", "chance", "change", "change", "colour",
-			"copper", "cotton", "credit", "damage", "danger", "degree", "design", "desire", "detail", "divide",
-			"effect", "enigma", "enough", "expert", "family", "father", "flight", "flower", "flower", "french",
-			"friend", "greedy", "growth", "hearer", "humour", "insect", "jargon", "korean", "letter", "liquid",
-			"little", "lotion", "market", "memory", "middle", "minute", "mother", "mother", "motion", "nation",
-			"number", "person", "please", "poetry", "poison", "polish", "porter", "powder", "profit", "reason",
-			"record", "regret", "reward", "rhythm", "silver", "sister", "sneeze", "stitch", "summer", "system",
-			"theory", "though", "vessel", "violet", "weight", "winter", "zombie" };
+	private static String wordSet6[] = {};
 	private static String wordSet5[] = { "about", "adios", "after", "again", "alone", "among", "angle", "apple", "birth",
 			"blood", "brass", "bread", "brute", "burst", "cause", "chalk", "check", "chide", "cloth", "cough", "cover",
 			"crack", "crime", "crush", "curve", "death", "doubt", "drink", "earth", "error", "event", "every", "field",

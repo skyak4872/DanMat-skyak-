@@ -31,4 +31,9 @@ public class CrosswordDao {
 		String sql = "SELECT * FROM word WHERE word LIKE ?";
 		return jdbcTemplate.query(sql, new CrosswordRowMapper(), "%"+word+"%");
 	}
+	
+	public List<Crossword> findAllBylen(int len){
+		String sql = "SELECT * FROM word WHERE len = ?";
+		return jdbcTemplate.query(sql, new CrosswordRowMapper(), len);
+	}
 }

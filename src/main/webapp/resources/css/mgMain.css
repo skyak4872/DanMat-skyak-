@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Binggrae-Bold';
+  src: url("../font/BinggraeSamanco-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: 'BinggraeSamanco';
+  src: url("../font/BinggraeSamanco.otf") format("truetype");
+}
+	
