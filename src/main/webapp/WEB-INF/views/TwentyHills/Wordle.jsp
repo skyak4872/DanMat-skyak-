@@ -33,7 +33,9 @@
 				0 0 0 1px rgba(0,0,0,0.4);'
 		}
 		
-		#Exit
+		#Exit {
+			
+		}
 	</style>
 </head> 
 <body>
