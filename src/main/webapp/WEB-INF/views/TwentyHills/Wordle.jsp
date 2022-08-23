@@ -6,54 +6,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-		div input.input {
-			width: 50px;
-			height: 50px;
-			font-size: 40px;
-			text-align: center;
-		}
-		
-		.life {
-			position: absolute;
-		}
-		button {
-			width: 150px;
-			height: 50px;
-			background-color: #cb99c5;
-			box-shadow: 0 0 0 1px #cb99c5 inset,
-				 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
-				 0 8px 0 0 rgba(189, 142, 183, .7),
-				 0 8px 0 1px rgba(0,0,0, .4),
-				 0 8px 8px 1px rgba(0,0,0,0.5);
-		}
-		button:active {
-			box-shadow: 0 0 0 1px #cb99c5 inset,
-				0 0 0 2px rgba(255,255,255,0.15) inset,
-				0 0 0 1px rgba(0,0,0,0.4);'
-		}
-		
-		#Exit {
-			
-		}
-	</style>
+<link rel="stylesheet" type="text/css" href="/Danmat/resources/css/Wordle.css"/>
 </head> 
 <body>
-	<div class="life">
-		<label>남은 횟수:</label>
-		<p Id="life">${life }</p>
-	</div>
-	<div class="text">
-	${input }
-	</div>
-	<button>입력</button>
-	<form method="get" action="/Danmat/main">
-	<input type="hidden" id="Exit" value="종료"/>
-	</form>
-	<div class="text-area">
-	<c:forEach items="${hint }" var="hint">
-		<h3 class="hint" hidden>${hint }</h3>
-	</c:forEach>
+	<div class="wrap">
+		<div class="life">
+			<label>남은 횟수:</label>
+			<p Id="life">${life }</p>
+		</div>
+		<div class="text-area">
+		<c:forEach items="${hint }" var="hint">
+			<h3 class="hint" hidden>${hint }</h3>
+		</c:forEach>
+		</div>
+		${input }
+		<div class="btn">
+		<button>입력</button>
+		</div>
+		<form method="get" action="/Danmat/main">
+		<input type="hidden" id="Exit" value="종료"/>
+		</form>
 	</div>
 	
 	<script>

@@ -1,8 +1,80 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
-input {
-	width: 50px;
-	height: 50px;
-	font-size: 40px;
-	text-align: center;
+body {
+	font-family: 'Silkscrean', cursive;
+	background-image: url("../images/digital_background.jpg");
 }
+
+div.wrap {
+	position: relative;
+	background: rgba(240, 240, 240, 0.8);
+	width: 900px;
+	height: 1080px;
+	border-radius: 8px;
+	padding: 20px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.wrap div {
+	position: relative;
+	display: block;
+	left: 25%;
+}
+
+.wrap div.text-area{
+	left: 0%;
+}
+
+.wrap div.life{
+	left: 0%;
+}
+
+.btn {
+	margin-top: 50px;
+}
+
+div input.input {
+			width: 50px;
+			height: 50px;
+			font-size: 40px;
+			text-align: center;
+		}
+		.life {
+			position: absolute;
+		}
+		button {
+			width: 150px;
+			height: 50px;
+			background-color: #cb99c5;
+			box-shadow: 0 0 0 1px #cb99c5 inset,
+				 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+				 0 8px 0 0 rgba(189, 142, 183, .7),
+				 0 8px 0 1px rgba(0,0,0, .4),
+				 0 8px 8px 1px rgba(0,0,0,0.5);
+		}
+		button:active {
+			box-shadow: 0 0 0 1px #cb99c5 inset,
+				0 0 0 2px rgba(255,255,255,0.15) inset,
+				0 0 0 1px rgba(0,0,0,0.4);
+		}
+		
+		#Exit {
+			width: 150px;
+			height: 50px;
+			background-color: #cb99c5;
+			box-shadow: 0 0 0 1px #cb99c5 inset,
+				 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+				 0 8px 0 0 rgba(189, 142, 183, .7),
+				 0 8px 0 1px rgba(0,0,0, .4),
+				 0 8px 8px 1px rgba(0,0,0,0.5);
+		}
+		#Exit:active {
+			box-shadow: 0 0 0 1px #cb99c5 inset,
+				0 0 0 2px rgba(255,255,255,0.15) inset,
+				0 0 0 1px rgba(0,0,0,0.4);
+		}
+		div {
+		position: relative;
+		}
