@@ -34,9 +34,8 @@ public class TwentyHillsController {
 		String[] Example_list = twentyHills.getExample().replaceAll(word, "○○").split("/");
 		int life = 20;
 		hint.add(hint_list[rd.nextInt(hint_list.length)]);
-		hint.add(Example_list[rd.nextInt(Example_list.length)]);
-		for(int i = 0; i< hint_list.length; i++) {
-			System.out.println(hint_list[i]);
+		for(int i = 0; i < Example_list.length; i++) {
+			hint.add(Example_list[i]);			
 		}
 		for(int i = 0; i< word.length(); i++) {
 			input += "<input type='text' class='input' maxlength='1'>";
@@ -52,10 +51,7 @@ public class TwentyHillsController {
 	}
 	
 	@PostMapping
-	@ResponseBody
-	public String check_word(@RequestParam("hint") List<String> hint, @RequestParam("life")int life) {
-		life--;
-		hint.add("힌트1");
-		return "TwentyHills/hint";
+	public String check_word(){
+		return "TwentyHills/Wordle";
 	}
 }
